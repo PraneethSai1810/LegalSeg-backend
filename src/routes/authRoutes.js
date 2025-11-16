@@ -19,13 +19,18 @@ const router = express.Router();
 // =============================
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 465,          // Render prefers this
-  secure: true,       // Must be true when using port 465
+  port: 587,
+  secure: false,
+  requireTLS: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  tls: {
+    rejectUnauthorized: false,
+  },
 });
+
 
 
 transporter.verify((error, success) => {
