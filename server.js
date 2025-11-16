@@ -32,7 +32,7 @@ console.log("Email:", process.env.EMAIL_USER ? process.env.EMAIL_USER : "❌ Mis
 
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: process.env.JWT_SECRET,
     resave: false,
     saveUninitialized: false,
   })
