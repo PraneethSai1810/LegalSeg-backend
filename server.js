@@ -22,10 +22,15 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // your React app’s origin
-    credentials: true, // allows cookies/auth headers if needed
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://<your-vercel-app>.vercel.app"
+    ],
+    credentials: true,
   })
 );
+
 
 console.log("Mongo URI:", process.env.MONGO_URI);
 console.log("Email:", process.env.EMAIL_USER ? process.env.EMAIL_USER : "❌ Missing");
