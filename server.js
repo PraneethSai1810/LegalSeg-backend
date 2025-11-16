@@ -25,10 +25,12 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
+      process.env.FRONTEND_URL  // Your Vercel frontend
     ],
     credentials: true,
   })
 );
+
 
 
 console.log("Mongo URI:", process.env.MONGO_URI);
