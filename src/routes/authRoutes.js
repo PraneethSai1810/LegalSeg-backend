@@ -18,12 +18,15 @@ const router = express.Router();
 // ✅ EMAIL CONFIG (Gmail)
 // =============================
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,          // Render prefers this
+  secure: true,       // Must be true when using port 465
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
 });
+
 
 transporter.verify((error, success) => {
   if (error) console.error("❌ Email transporter failed:", error);
