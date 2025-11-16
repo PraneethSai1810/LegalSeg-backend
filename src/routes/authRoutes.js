@@ -389,22 +389,23 @@ router.get(
     try {
       const user = req.user;
 
-      // Generate JWT
       const token = jwt.sign(
         { id: user._id, email: user.email, name: user.name },
         process.env.JWT_SECRET,
         { expiresIn: "7d" }
       );
 
-      // ✅ Redirect with token in URL
-      console.log("✅ Redirecting to frontend with token:", token);
-      res.redirect(`http://localhost:3000/dashboard?token=${token}`);
+      const FRONTEND_URL = process.env.FRONTEND_URL;
+
+      res.redirect(`${FRONTEND_URL}/dashboard?token=${token}`);
     } catch (err) {
-      console.error("Google callback error:", err);
-      res.redirect("http://localhost:3000/login");
+      const FRONTEND_URL = process.env.FRONTEND_URL;
+res.redirect(`${FRONTEND_URL}/login`);
+
     }
   }
 );
+
 
 
 
