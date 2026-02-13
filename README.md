@@ -1,94 +1,147 @@
-LegalSeg Backend
+# LegalSeg
 
-Backend service for LegalSeg – a platform that analyzes Indian legal judgements and supports rhetorical role classification.
+**One-line:** AI-powered platform that analyzes Indian legal judgements and classifies rhetorical roles using NLP models.
 
-🚀 Overview
+---
 
-This backend provides REST APIs for:
+## 🚀 Overview
 
-User authentication
+LegalSeg is a full-stack legal-tech application designed to:
 
-Uploading legal documents
+- Upload and analyze Indian court judgements
+- Structure unformatted legal text
+- Perform rhetorical role classification
+- Provide a clean UI dashboard for case exploration
 
-Processing and storing structured judgement data
+The system combines modern web technologies with NLP-based backend processing.
 
-Connecting with ML/NLP models for rhetorical role classification
+---
 
-Serving processed results to the frontend
+## ✨ Features
 
-Built to support a scalable full-stack legal-tech application.
+- Upload and manage legal judgement documents
+- Structured extraction of legal sections
+- Rhetorical role classification (ML/NLP support)
+- Secure authentication (JWT-based)
+- Dashboard to view and manage processed cases
+- MongoDB storage for structured data
 
-🛠 Tech Stack
+---
 
-Node.js
+## 🛠 Tech Stack
 
-Express.js
+### Frontend
+- React.js
+- Axios
+- React Router
+- Framer Motion
 
-MongoDB
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
 
-Mongoose
+### ML / NLP
+- Python-based processing
+- Transformer-based classification
 
-JWT Authentication
+---
 
-REST API Architecture
+## 📂 Repository Structure
+LegalSeg/
+│── Backend/
+│ ├── controllers/
+│ ├── routes/
+│ ├── models/
+│ ├── middleware/
+│ ├── config/
+│ └── server.js
+│
+│── Frontend/
+│ ├── public/
+│ ├── src/
+│ └── package.json
+│
+└── README.md
 
-📂 Project Structure
-legalSeg-backend/
-│── controllers/
-│── routes/
-│── models/
-│── middleware/
-│── config/
-│── server.js
+---
 
-⚙️ Installation & Setup
-1️⃣ Clone the repository
-git clone https://github.com/PraneethSai1810/LegalSeg-backend.git
-cd LegalSeg-backend
+## ⚙️ Installation & Setup
 
-2️⃣ Install dependencies
+### 1️⃣ Clone the repository
+
+git clone https://github.com/PraneethSai1810/LegalSeg.git
+
+cd LegalSeg  
+
+---
+
+### 2️⃣ Backend Setup
+
+cd Backend
 npm install
-
-3️⃣ Create .env file
+Create a `.env` file:
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
+Run backend:
 
-4️⃣ Run the server
 npm start
 
 
-Server runs on:
+Backend runs at:
 
 http://localhost:5000
 
-🔐 Authentication
 
-JWT-based authentication
+---
 
-Protected routes using middleware
+### 3️⃣ Frontend Setup
 
-📡 API Features
+cd Frontend
+npm install
+npm start
 
-User registration & login
 
-Upload and manage legal documents
+Frontend runs at:
 
-Fetch structured judgement data
+http://localhost:3000
 
-Backend support for NLP-based classification
 
-🔗 Related Repository
+---
 
-Full Stack repository:
-👉 https://github.com/PraneethSai1810/LegalSeg
+## 🔐 Authentication
 
-🧠 Future Improvements
+- JWT-based login & registration
+- Protected routes using middleware
+- Token verification for secured APIs
 
-Role-based access control
+---
 
-API rate limiting
+## 📡 API Capabilities
 
-Production deployment with Docker
+- User registration & login
+- Upload legal documents
+- Store structured judgement data
+- Fetch classified legal sections
+- Secure data retrieval
 
-Model optimization
+---
+
+## 🔮 Future Improvements
+
+- Role-based access control
+- Dockerized deployment
+- Model optimization
+- CI/CD pipeline
+- Cloud deployment (AWS / GCP)
+
+---
+
+## 🔗 Related Repository
+
+Backend-only repo:
+https://github.com/PraneethSai1810/LegalSeg-backend
+
