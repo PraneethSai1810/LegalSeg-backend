@@ -80,7 +80,7 @@ Backend support for NLP-based classification
 
 🔗 Related Repository
 
-Frontend repository:
+Full Stack repository:
 👉 https://github.com/PraneethSai1810/LegalSeg
 
 🧠 Future Improvements
