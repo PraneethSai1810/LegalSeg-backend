@@ -25,16 +25,13 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
-      process.env.FRONTEND_URL  // Your Vercel frontend
+      process.env.FRONTEND_URL
     ],
     credentials: true,
   })
 );
 
-
-
-console.log("Mongo URI:", process.env.MONGO_URI);
-console.log("Email:", process.env.EMAIL_USER ? process.env.EMAIL_USER : "❌ Missing");
+console.log("Email configured:", !!process.env.EMAIL_USER);
 
 app.use(
   session({
